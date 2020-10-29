@@ -1,0 +1,1192 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    @include breakpoint(large) {
+        padding-top: 4rem;
+    }
+}
+
+@mixin plainlink {
+    border-bottom: none !important;
+}
+
+@mixin darkfocus {
+    outline: 2px dotted $dark-blue;
+    outline-offset: 2px;
+}
+
+@mixin lightfocus {
+    outline: 2px dotted $white;
+    outline-offset: 2px;
+}
+
+#skip a {
+    background: transparent none repeat scroll 0 0;
+    border-bottom: 1px solid white;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 1px solid white;
+    color: white;
+    left: 40%;
+    padding: 8px;
+    position: absolute;
+    top: -48px;
+    transition: top 1s ease-out 0s, background 1s linear 0s;
+    z-index: 100;
+    font-size: 0.9rem;
+}
+
+#skip a:hover {
+    text-decoration: underline;
+}
+
+#skip a:focus {
+    background: #000 none repeat scroll 0 0;
+    outline: 0 none;
+    top: 0;
+    transition: top 0.1s ease-in 0s, background 0.5s linear 0s;
+    color: #fff;
+}
+
+header {
+    background-color: $dark-blue;
+    color: #fff;
+}
+
+.header-contain {
+    background: url("../img/sm-hex.png") left 4px no-repeat;
+    padding-top: 20px;
+}
+
+.sitename {
+    padding-left: 32px;
+    font-family: "Work Sans";
+    font-size: 1.2rem;
+
+    a:link,
+    a:visited {
+        color: #fff;
+        @include plainlink;
+    }
+
+    a:hover,
+    a:focus {
+        color: #d7f0fe;
+    }
+    a:focus {
+        @include lightfocus;
+    }
+}
+
+a:link {
+    border-bottom: 1px dotted $primary-color;
+}
+
+a:visited {
+    color: $used;
+    border-bottom-color: $used;
+}
+
+a:focus {
+    @include darkfocus;
+}
+
+.sitenav {
+    @include breakpoint(medium) {
+        text-align: right;
+    }
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: block;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.9rem;
+
+    @include breakpoint(medium) {
+        display: inline-block;
+        margin-right: 0.8rem;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    a:link,
+    a:visited {
+        color: #fff;
+        border-bottom: 1px solid transparent;
+        transition-property: color, border-color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+    }
+
+    a:hover,
+    a:focus,
+    a:visited:focus,
+    a:visited:hover {
+        border-bottom-color: #9fcdef;
+        color: #9fcdef;
+        color: $pale-blue;
+    }
+
+    a:focus {
+        @include lightfocus;
+    }
+
+    a.current {
+        border-bottom-color: #fff;
+    }
+}
+
+///////////////// ROLES
+
+.role-narrative {
+    padding-right: 2.75rem;
+
+    p:first-of-type {
+        margin-top: 1rem;
+    }
+
+    a:link {
+        border-bottom: 1px dotted $primary-color;
+    }
+
+    a:visited {
+    }
+
+    a:hover,
+    a:focus {
+        border-bottom-style: solid;
+    }
+}
+
+.role-template,
+.stage-template {
+    h2 {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.045rem;
+        margin: 1rem 0;
+    }
+
+    p + h2,
+    ul + h2 {
+        margin-top: 1.75rem;
+    }
+}
+
+.reg-template {
+    h2,
+    h3 {
+        color: $dark-blue;
+    }
+
+    h3 {
+        font-weight: 700;
+    }
+}
+
+.content-options {
+    padding-top: 4rem;
+    > .cell {
+        text-align: center;
+    }
+}
+
+.reg-title {
+    text-align: center;
+}
+
+.orient {
+    color: #ef6706;
+}
+
+.tools {
+    color: $i-2;
+}
+
+.choice-options {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        transition: all 0.4s ease-in-out;
+        @include plainlink;
+    }
+    a:hover {
+        transform: scale(1.1);
+    }
+}
+
+.tandd {
+    .cell {
+        padding-top: 2rem;
+    }
+    h2 {
+        margin-top: 1.5rem;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-style: italic;
+        color: $dark-blue;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.round-btn:link,
+.round-btn:visited {
+    padding: 0.85rem 1.25rem;
+    border: 4px solid gray;
+    border-radius: 40px;
+    color: $black;
+    font-weight: 600;
+}
+
+.toolset:link,
+.toolset:visited,
+.prc:link,
+.prc:visited {
+    border-color: #f9e6a3;
+    background-color: #f7cc48;
+}
+
+.dels:link,
+.dels:visited {
+    border-color: #bce6f3;
+    background-color: #65bfdb;
+}
+
+.curr:link,
+.curr:visited {
+    border-color: #f5b182;
+    background-color: #fa8432;
+}
+
+.prc:link,
+.prc:visited {
+    font-size: 1.1rem;
+}
+
+.round-btn:hover,
+.round-btn:focus {
+    background-color: #0e576f;
+    color: $white;
+    border-color: #afd2da;
+}
+
+.highlighted-action {
+    text-align: center;
+}
+
+.createdin {
+    display: inline-block;
+    float: right;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: $u-2;
+    &:before {
+        content: "Stages: ";
+    }
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 1.75rem 0;
+    color: #cf5610;
+}
+
+.crosslink {
+    margin-top: 3rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.del-defs {
+    padding-left: 50px;
+
+    dt {
+        margin-left: -50px;
+        color: $dark-blue;
+        font-weight: 600;
+    }
+    dd {
+    }
+}
+
+.nav-card {
+    /*border: 4px solid #ffc69f; */
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    display: inline-block;
+    margin: 1rem;
+    background-color: #fff0e5;
+    @include breakpoint(large) {
+    }
+
+    h2 {
+        background-color: #ffdac1;
+        color: #933e02;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 0.04rem;
+        font-weight: 700;
+        padding: 0.3rem;
+    }
+}
+
+.nav-card-content {
+    padding: 0.5rem 0.75rem;
+}
+
+.card-action-button {
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.role-list-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0.2rem;
+        height: 2.5rem;
+        width: 2.4rem;
+    }
+
+    &.roles-inline li {
+        display: inline-block;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e4e4e4;
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 1px 1px 1px #333;
+            height: 100%;
+        }
+    }
+}
+
+.roles-inline {
+    margin-bottom: 1rem;
+}
+
+.role-tag {
+    font-style: italic;
+}
+
+.role-list {
+    h2 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-top: 0;
+        letter-spacing: 0.045rem;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #eceff0;
+        height: 100%;
+        color: #333;
+        @include plainlink;
+    }
+
+    a.active {
+        background-color: inherit;
+        color: #fff;
+    }
+
+    a:hover,
+    a:focus {
+        background-color: #072446;
+        color: #fff;
+    }
+
+    select {
+        text-transform: capitalize;
+        display: block;
+        @include breakpoint(medium) {
+            display: none;
+        }
+    }
+}
+
+.role-an {
+    background: linear-gradient(180deg, $an-1, $an-2);
+}
+
+.role-ax {
+    background: linear-gradient(180deg, $ax-1, $ax-2);
+}
+
+.role-c {
+    background: linear-gradient(180deg, $c-1, $c-2);
+}
+
+.role-db {
+    background: linear-gradient(180deg, $db-1, $db-2);
+}
+
+.role-de {
+    background: linear-gradient(180deg, $de-1, $de-2);
+}
+
+.role-dv {
+    background: linear-gradient(180deg, $dv-1, $dv-2);
+}
+
+.role-fe {
+    background: linear-gradient(180deg, $fe-1, $fe-2);
+}
+
+.role-i {
+    background: linear-gradient(180deg, $i-1, $i-2);
+}
+
+.role-pm {
+    background: linear-gradient(180deg, $pm-1, $pm-2);
+}
+
+.role-qa {
+    background: linear-gradient(180deg, $qa-1, $qa-2);
+}
+
+.role-s {
+    background: linear-gradient(180deg, $s-1, $s-2);
+}
+
+.role-st {
+    background: linear-gradient(180deg, $st-1, $st-2);
+}
+.role-u {
+    background: linear-gradient(180deg, $u-1, $u-2);
+}
+.role-ux {
+    background: linear-gradient(180deg, $ux-1, $ux-2);
+}
+
+.rt-an {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $an-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $an-1, $an-2);
+        color: $an-2;
+    }
+
+    .role-bullets li::marker {
+        color: $an-2;
+    }
+}
+
+.rt-ax {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $ax-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $ax-1, $ax-2);
+        color: $ax-2;
+    }
+
+    .role-bullets li::marker {
+        color: $ax-2;
+    }
+}
+
+.rt-c {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $c-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $c-1, $c-2);
+        color: $c-2;
+    }
+
+    .role-bullets li::marker {
+        color: $c-2;
+    }
+}
+
+.rt-db {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $db-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $db-1, $db-2);
+        color: $db-2;
+    }
+
+    .role-bullets li::marker {
+        color: $db-2;
+    }
+}
+
+.rt-de {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $de-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $de-1, $de-2);
+        color: $de-2;
+    }
+
+    .role-bullets li::marker {
+        color: $de-2;
+    }
+}
+.rt-dv {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $dv-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $dv-1, $dv-2);
+        color: $dv-2;
+    }
+
+    .role-bullets li::marker {
+        color: $dv-2;
+    }
+}
+
+.rt-fe {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $fe-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $fe-1, $fe-2);
+        color: $fe-2;
+    }
+
+    .role-bullets li::marker {
+        color: $fe-2;
+    }
+}
+
+.rt-i {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $i-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $i-1, $i-2);
+        color: $i-2;
+    }
+
+    .role-bullets li::marker {
+        color: $i-2;
+    }
+}
+
+.rt-pm {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $pm-3;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $pm-1, $pm-2);
+        color: $pm-2;
+    }
+
+    .role-bullets li::marker {
+        color: $pm-3;
+    }
+}
+
+.rt-qa {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $qa-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $qa-1, $qa-2);
+        color: $qa-2;
+    }
+
+    .role-bullets li::marker {
+        color: $qa-2;
+    }
+}
+
+.rt-s {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $s-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $s-1, $s-2);
+        color: $s-2;
+    }
+
+    .role-bullets li::marker {
+        color: $s-2;
+    }
+}
+
+.rt-st {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $st-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $st-1, $st-2);
+        color: $st-2;
+    }
+
+    .role-bullets li::marker {
+        color: $st-2;
+    }
+}
+
+.rt-u {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $u-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $u-1, $u-2);
+        color: $u-2;
+    }
+
+    .role-bullets li::marker {
+        color: $u-2;
+    }
+}
+
+.rt-ux {
+    h1,
+    h2,
+    h3,
+    .role-tag {
+        color: $ux-2;
+    }
+
+    .role-icon,
+    &.element {
+        border-image-source: linear-gradient(90deg, $ux-1, $ux-2);
+        color: $ux-2;
+    }
+
+    .role-bullets li::marker {
+        color: $ux-2;
+    }
+}
+
+.role-heading h1 {
+    padding-top: 0.875rem;
+}
+
+.role-icon {
+    font-family: "Work Sans", "Lato", Helvetica, sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    border: 5px solid transparent;
+
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.6rem;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 7px;
+}
+
+.role-bullets {
+    li {
+        padding-bottom: 0.6rem;
+    }
+
+    li::marker {
+        color: rgb(180, 180, 180);
+    }
+}
+
+#role-list-ul {
+    display: none;
+    @include breakpoint(medium) {
+        display: block;
+    }
+}
+
+#role-list-select {
+    display: block;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.role-staging {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+
+    li {
+        margin: 0.4rem 0.8rem 1.2rem 0.8rem;
+        font-size: 0.9rem;
+        text-align: center;
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        @include plainlink;
+        color: $primary-color;
+        font-weight: 700;
+    }
+
+    a:hover,
+    a:focus {
+        color: $dark-blue;
+    }
+
+    a:hover span.element,
+    a:focus span.element {
+        background-color: $ux-1;
+        color: #fff;
+        border-image-source: linear-gradient(180deg, $ux-1, $ux-1);
+    }
+
+    span {
+        display: block;
+        border: 10px solid;
+        border-image-slice: 1;
+        border-width: 9px;
+        width: 8.5rem;
+        height: 8.5rem;
+        line-height: 7.5rem;
+        font-size: 2.75rem;
+        font-weight: 700;
+    }
+}
+
+//////////////////STAGES
+
+.lede {
+    font-size: 1.2rem;
+    color: $next;
+}
+
+.stage-heading {
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        padding-bottom: 1.5rem;
+    }
+}
+
+section {
+    padding-top: 1rem;
+}
+
+.stage-icon {
+    display: block;
+    margin: 1rem auto;
+    width: 165px;
+    height: auto;
+
+    @include breakpoint(medium) {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.stage-list ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 1.75rem;
+    font-size: 0.9rem;
+    padding: 0;
+    display: none;
+
+    @include breakpoint(medium) {
+        display: block;
+        margin-top: 5rem;
+    }
+
+    li {
+        padding-bottom: 0.5rem;
+    }
+
+    .active {
+        font-weight: 700;
+    }
+}
+
+.stage-list {
+    a:link {
+        border-bottom: 1px solid transparent;
+        transition-property: color, border-color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+    }
+    a:visited {
+        color: $dark-blue;
+    }
+
+    a:hover,
+    a:focus {
+        border-bottom-color: $primary-color;
+    }
+
+    .active a {
+        color: $dark-blue;
+    }
+
+    .active a:focus,
+    .active a:hover {
+        border-bottom-color: $dark-blue;
+    }
+}
+
+#stage-list-select,
+.mob-only {
+    display: block;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.stage-list select {
+    display: block;
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.stage-pre {
+    h1,
+    .role-bullets li::marker {
+        color: #b78e06;
+    }
+
+    h2,
+    h3 {
+        color: #937206;
+        color: #986d01;
+    }
+}
+
+.stage-disc {
+    h1,
+    .role-bullets li::marker {
+        color: #3d99db;
+    }
+
+    h2,
+    h3 {
+        color: #237ab8;
+    }
+}
+
+.stage-design {
+    h1,
+    h2,
+    h3,
+    .role-bullets li::marker {
+        color: #0269a3;
+    }
+}
+
+.stage-build,
+.stage-overview {
+    h1,
+    h2,
+    h3,
+    .role-bullets li::marker {
+        color: #103c6d;
+    }
+}
+
+.stage-test {
+    h1,
+    h2,
+    h2,
+    .role-bullets li::marker {
+        color: #149da1;
+    }
+}
+
+.stage-deploy {
+    h1,
+    h2,
+    h3,
+    .role-bullets li::marker {
+        color: #683a9a;
+    }
+}
+
+.stage-support {
+    h1,
+    h2,
+    h3,
+    .role-bullets li::marker {
+        color: #be1f5a;
+    }
+}
+
+.emph {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.stage-overview p {
+    max-width: 55rem;
+
+    &.img-block {
+        max-width: none;
+        margin: 1.5rem 0;
+    }
+}
+
+.stage-overview h1.kickoffs {
+    color: #6a9806;
+}
+
+.pko {
+    h2,
+    .lede {
+        color: #587f06;
+    }
+
+    .role-bullets li::marker {
+        color: rgb(88, 127, 6);
+    }
+}
+
+.pko-steps {
+    padding-left: 50px;
+
+    .hexh2 {
+        margin-left: -50px;
+
+        img {
+            display: inline-block;
+            margin-right: 6px;
+        }
+    }
+}
+
+.side-notes {
+    background: url(../img/braces-down.png) 20px top no-repeat;
+    background-size: 90% 40px;
+    padding-top: 50px;
+
+    @include breakpoint(large) {
+        background: url(../img/braces.png) 30px center no-repeat;
+        padding-left: 60px;
+        padding-top: 20px;
+        margin-top: 40px;
+        background-size: 40px 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90%;
+    }
+}
+
+.aims {
+    font-style: italic;
+    list-style-type: none;
+}
+
+.item-detail {
+    display: block;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.next-step a {
+    display: inline-block;
+    margin-top: 1.75rem;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    @include plainlink;
+
+    &:before {
+        content: "Next: ";
+    }
+
+    &:visited {
+        color: $primary-dark;
+    }
+
+    &:hover,
+    &:focus {
+        color: $next;
+    }
+
+    &:after {
+        content: url(../img/next.png);
+        display: inline-block;
+        padding-left: 3px;
+    }
+
+    &:hover:after,
+    &:focus:after,
+    &:visited:hover {
+        content: url(../img/next-on.png);
+    }
+}
+
+.go-back a {
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    @include plainlink;
+
+    &:visited {
+        color: $primary-dark;
+    }
+
+    &:hover,
+    &:focus {
+        color: $next;
+    }
+
+    &:before {
+        content: url(../img/back-on.png);
+        display: inline-block;
+        padding-left: 3px;
+    }
+
+    &:hover:before,
+    &:focus:before,
+    &:visited:hover {
+        content: url(../img/back.png);
+    }
+}
+/////////////FOOTER
+
+footer {
+    flex-shrink: 0;
+    background-color: #eceff0;
+    border-top: 4px solid #c4d4d8;
+
+    a:link {
+        border-bottom: 1px dotted;
+        font-weight: 700;
+    }
+
+    a:hover,
+    a:focus {
+        border-bottom-style: solid;
+    }
+}
+
+.footer-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 0.9rem;
+    color: $dark-blue;
+    h2,
+    h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.045rem;
+    }
+}
+
+footer .copyright {
+    background-color: $white;
+    color: $dark-blue;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    p {
+        @include xy-grid-container;
+        margin-bottom: 0;
+    }
+}

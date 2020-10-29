@@ -1,0 +1,21 @@
+.stage-preflight {
+  color: #986d01; }
+
+.stage-disc {
+  color: #237ab8; }
+
+.stage-design {
+  color: #0269a3; }
+
+.stage-build,
+.stage-overview {
+  color: #103c6d; }
+
+.stage-test {
+  color: #149da1; }
+
+.stage-deploy {
+  color: #683a9a; }
+
+.stage-support {
+  color: #be1f5a; }

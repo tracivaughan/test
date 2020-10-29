@@ -1,0 +1,59 @@
+$an-1: #124795;
+$an-2: #092c6a;
+$ax-1: #367060;
+$ax-2: #2c574d;
+//$c-1: #ffda6b;
+//$c-2: #eab926;
+$c-1: #d39a37;
+$c-2: #986a1a;
+$db-1: #83d115;
+$db-2: #518708;
+$de-1: #c52470;
+$de-2: #890845;
+$dv-1: #869616;
+$dv-2: #515b0c;
+$fe-1: #b137d3;
+$fe-2: #831ead;
+$i-1: #7ce0ff;
+$i-2: #3c9fbf;
+$pm-1: #31d9d2;
+$pm-2: #1f978d;
+$pm-3: #1b837b;
+$qa-1: #1197b9;
+$qa-2: #096c85;
+$s-2: #9b0c0c;
+$s-1: #d33737;
+$st-1: #722cae;
+$st-2: #4f1a7c;
+$u-1: #f37e3c;
+$u-2: #cf5610;
+$ux-1: #1f94ee;
+$ux-2: #1a6fb1;
+
+.stage-preflight {
+    color: #986d01;
+}
+
+.stage-disc {
+    color: #237ab8;
+}
+
+.stage-design {
+    color: #0269a3;
+}
+
+.stage-build,
+.stage-overview {
+    color: #103c6d;
+}
+.stage-test {
+    color: #149da1;
+}
+
+.stage-deploy {
+    color: #683a9a;
+}
+
+.stage-support {
+    color: #be1f5a;
+}
